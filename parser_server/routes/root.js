@@ -6,7 +6,6 @@ module.exports = async function (fastify, opts) {
     return { root: true };
   });
   fastify.post("/parse", async function (request, reply) {
-    console.log(request.body);
     const ast = espree.parse(request.body, {
       loc: true,
       sourceType: "module",
